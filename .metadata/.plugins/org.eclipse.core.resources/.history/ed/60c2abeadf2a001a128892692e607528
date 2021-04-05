@@ -1,0 +1,32 @@
+
+
+
+
+
+package com.abc.test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateWords {
+	public static void main(String[] args) 
+	{
+	String x="today is sunday today is monday";
+	String[] y =x.split(" ");
+	Map<String,Integer> hmap=new HashMap<>();
+	for(String words:y)
+	{
+		if(hmap.get(words) == null)
+		{
+			hmap.put(words,1);
+		}
+		else
+		{
+			hmap.put(words,hmap.get(words)+1);
+		}
+	}
+			System.out.println(hmap);
+	
+
+	}
+}

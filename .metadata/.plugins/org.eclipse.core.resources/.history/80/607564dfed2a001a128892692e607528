@@ -1,0 +1,42 @@
+
+
+
+
+
+package com.abc.test;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class DuplicateWords {
+	public static void main(String[] args) 
+	{
+	String x="today is sunday today is monday sunday";
+	String[] y =x.split(" ");
+	Map<String,Integer> hmap=new LinkedHashMap<>();
+	for(String words:y)
+	{
+		if(hmap.get(words) == null)
+		{
+			hmap.put(words,1);
+		}
+		else
+		{
+			hmap.put(words,hmap.get(words)+1);
+		}
+	}
+	Set<Map.Entry<String,Integer>>map=hmap.entrySet();
+	for(Map.Entry<String,Integer> data:map)
+	{
+		if(data.getValue()>1)
+		System.out.print(data.getValue()+" ");
+		System.out.print(data.getKey());
+	
+	System.out.println();
+	}	
+	
+
+	}
+}

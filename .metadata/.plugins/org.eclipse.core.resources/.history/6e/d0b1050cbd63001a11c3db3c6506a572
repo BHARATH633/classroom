@@ -1,0 +1,21 @@
+package com.akhil.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DriverTesting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver A1=new ChromeDriver();
+		A1.manage().window().maximize();
+		A1.get("https://www.facebook.com");
+		WebElement A2=A1.findElement(By.id("email"));
+		A2.sendKeys(akhilciramdasu@gmail.com);
+		WebElement A3=A1.findElement(By.id("pass"));
+		A3.sendKeys(Akhil@411);
+	}
+
+}

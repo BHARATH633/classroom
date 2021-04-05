@@ -1,0 +1,37 @@
+package com.newtours.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class FlightBooking {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver A1= new ChromeDriver();
+		A1.manage().window().maximize();
+		//A1.manage().TimeUnit.impliclitlyWait(20,Seconds);
+		A1.get("http://newtours.demoaut.com/");
+		A1.findElement(By.name("userName")).sendKeys("mercury");
+		A1.findElement(By.name("password")).sendKeys("mercury");
+		A1.findElement(By.name("login")).click();
+		WebElement drop=A1.findElement(By.name("passCount"));
+		Select s=new Select(drop);
+		
+		s.selectByIndex(1);
+		WebElement drop1=A1.findElement(By.name("fromPort"));
+		Select s1=new Select(drop1);
+        s1.selectByIndex(2);
+       Thread.sleep(5000);
+        A1.findElement(By.xpath("(//input[@type='radio'])[2]")).click();
+        //	A1.findElements(By.xpath(“//input[@type=’radio’]”)).get(0).click();
+        
+    	A1.findElement(By.name("findFlights")).click();
+    	
+      //  	 driver.FindElement(By.Xpath("(//input[@id = 'XXXX'])[1]")).click();
+        	 
+    	
+	}
+
+}
